@@ -1,0 +1,190 @@
+
+---
+title: "Software de Integridad: Integración SAP, GIS y SCADA en Calidda"
+date: "2024-06-20"
+excerpt: "Gestión integral del proyecto de Software de Integridad para Calidda Gas Natural, integrando SAP, GIS y SCADA para cumplimiento normativo y trazabilidad de activos críticos."
+---
+
+# Software de Integridad: Integración SAP, GIS y SCADA en Calidda
+
+## Contexto del Proyecto
+
+Calidda Gas Natural, la principal distribuidora de gas natural en Perú, requería un sistema robusto para gestionar la integridad de sus activos de infraestructura crítica. Este proyecto involucró la integración de múltiples sistemas empresariales para garantizar el cumplimiento normativo y la trazabilidad completa.
+
+## El Desafío
+
+### Requisitos Técnicos
+
+- Integración con **SAP ERP** para gestión de activos y mantenimiento
+- Conexión con **GIS (Geographic Information System)** para ubicación de activos
+- Integración con **SCADA** para datos operacionales en tiempo real
+- Cumplimiento de normativa **OSINERGMIN** (regulador peruano)
+
+### Desafíos Técnicos
+
+- Diferentes protocolos y estándares de integración
+- Volumen masivo de datos de sensores SCADA
+- Requisitos de disponibilidad 24/7
+- Necesidad de trazabilidad completa para auditorías
+
+## La Solución Implementada
+
+### Arquitectura de Integración
+
+```
+SCADA → Middleware → Software Integridad
+                   ↓
+                  SAP ERP
+                   ↓
+                 GIS System
+```
+
+### Componentes Principales
+
+1. **Módulo de Integridad**
+   - Gestión de inspecciones
+   - Registro de anomalías
+   - Planes de remediación
+   - Reportes regulatorios
+
+2. **Capa de Integración**
+   - ESB (Enterprise Service Bus)
+   - APIs RESTful
+   - Web Services SOAP
+   - Sincronización de datos en tiempo real
+
+3. **Dashboard de Monitoreo**
+   - Visualización de KPIs de integridad
+   - Alertas automáticas
+   - Reportes personalizados
+   - Trazabilidad de auditoría
+
+## Gestión del Proyecto
+
+### Fases del Proyecto
+
+#### Fase 1: Análisis y Diseño (3 meses)
+
+- Levantamiento de procesos actuales
+- Mapeo de integraciones requeridas
+- Diseño de arquitectura técnica
+- Definición de estándares de datos
+
+#### Fase 2: Desarrollo e Integración (6 meses)
+
+- Desarrollo del módulo de integridad
+- Implementación de interfaces SAP
+- Integración con GIS y SCADA
+- Pruebas unitarias y de integración
+
+#### Fase 3: Testing y UAT (2 meses)
+
+- Pruebas funcionales
+- Pruebas de carga y performance
+- User Acceptance Testing
+- Corrección de defectos
+
+#### Fase 4: Despliegue y Estabilización (2 meses)
+
+- Migración de datos históricos
+- Capacitación de usuarios
+- Go-Live escalonado
+- Soporte post-producción
+
+### Equipo del Proyecto
+
+- **Project Manager**: 1
+- **Arquitecto de Soluciones**: 1
+- **Desarrolladores**: 6
+- **Especialistas de Integración**: 2
+- **Analistas Funcionales**: 3
+- **QA Testers**: 2
+- **Coordinadores de Negocio**: 2
+
+## Resultados Logrados
+
+### Mejoras Operacionales
+
+✅ **Tiempo de inspección reducido en 30%**
+✅ **Trazabilidad 100%** de todos los activos críticos
+✅ **Generación automática** de reportes regulatorios
+✅ **Reducción de errores manuales** en 85%
+
+### Cumplimiento Normativo
+
+✅ **Cumplimiento total** de normativa OSINERGMIN
+✅ **Auditorías exitosas** sin observaciones críticas
+✅ **Trazabilidad completa** para investigaciones
+✅ **Reportes en tiempo real** para regulador
+
+### Beneficios Técnicos
+
+✅ **Integración en tiempo real** con SAP y SCADA
+✅ **Disponibilidad del sistema** 99.8%
+✅ **Tiempo de respuesta** < 2 segundos
+✅ **Escalabilidad** para crecimiento futuro
+
+## Tecnologías Utilizadas
+
+### Backend
+
+- **Java Spring Boot** para servicios
+- **Oracle Database** para persistencia
+- **SAP PI/PO** para integración
+- **Apache Kafka** para mensajería
+
+### Frontend
+
+- **Angular** para aplicación web
+- **Chart.js** para visualización
+- **Leaflet** para mapas GIS
+
+### Infraestructura
+
+- **Red Hat Enterprise Linux**
+- **WebLogic Server**
+- **Oracle RAC** para alta disponibilidad
+
+## Lecciones Aprendidas
+
+### 1. Complejidad de Integración SAP
+
+Las integraciones con SAP requirieron expertise especializado y tiempo adicional de análisis. La documentación detallada de las APIs fue fundamental.
+
+### 2. Gestión de Stakeholders
+
+Coordinación constante con múltiples áreas (Operaciones, TI, Legal, Regulatorio) fue crítica para alinear expectativas y requisitos.
+
+### 3. Importancia del UAT
+
+El User Acceptance Testing extensivo permitió identificar gaps funcionales que no eran evidentes en las pruebas técnicas.
+
+### 4. Soporte Post Go-Live
+
+Planificar un equipo robusto de soporte post-producción fue esencial para la estabilización rápida del sistema.
+
+## Impacto en el Negocio
+
+💼 **Reducción de riesgos operacionales**
+💼 **Mejora en auditorías regulatorias**
+💼 **Optimización de procesos de mantenimiento**
+💼 **Base para futuras expansiones de red**
+
+## Conclusión
+
+Este proyecto demostró la importancia de:
+
+1. **Planificación exhaustiva** en proyectos de integración complejos
+2. **Comunicación efectiva** con múltiples stakeholders
+3. **Gestión de riesgos proactiva**
+4. **Equipo multidisciplinario** con expertise especializado
+
+El éxito del proyecto posicionó a Calidda como líder en gestión de integridad de activos en la industria de gas natural en Perú.
+
+---
+
+**Industria:** Energía (Gas Natural)  
+**Cliente:** Calidda Gas Natural del Perú  
+**Duración:** 13 meses  
+**Equipo:** 17 profesionales  
+**Inversión:** USD $4.2M

@@ -1,0 +1,239 @@
+
+---
+title: "Dashboard Power BI: Gestión de +200 Requerimientos en Tronweb"
+date: "2024-11-10"
+excerpt: "Implementación de Dashboard centralizado en Power BI para seguimiento y gestión de más de 200 requerimientos simultáneos con integración a múltiples fuentes de datos."
+---
+
+# Dashboard Power BI: Gestión de +200 Requerimientos en Tronweb
+
+## El Problema
+
+El equipo de Tronweb gestionaba más de 200 requerimientos simultáneos utilizando:
+
+- **Múltiples hojas de Excel** dispersas
+- **Sin visibilidad en tiempo real** del estado de proyectos
+- **Reportes manuales** que consumían horas de trabajo
+- **Dificultad para identificar** cuellos de botella
+
+## La Solución: Dashboard Power BI
+
+Diseñamos e implementamos un Dashboard centralizado en Power BI que transformó la gestión de requerimientos:
+
+### Características Principales
+
+1. **Vista 360° de Requerimientos**
+   - Estado de cada requerimiento en tiempo real
+   - Priorización dinámica
+   - Asignación de recursos
+   - Fechas de entrega y SLAs
+
+2. **KPIs Ejecutivos**
+   - Requerimientos completados vs. pendientes
+   - Tendencias de cumplimiento de SLAs
+   - Distribución por tipo y prioridad
+   - Carga de trabajo por equipo
+
+3. **Alertas Automáticas**
+   - Requerimientos en riesgo de incumplimiento
+   - Sobrecarga de recursos
+   - Dependencias críticas
+
+## Arquitectura de Datos
+
+### Fuentes de Datos Integradas
+
+- **SharePoint Lists**: Registro de requerimientos
+- **Azure DevOps**: Tareas y sprints
+- **SQL Server**: Base de datos corporativa
+- **Excel**: Datos históricos y complementarios
+
+### Proceso ETL
+
+```
+Fuentes → Power Query → Modelado → Visualización
+           (Limpieza)   (Relaciones)  (Dashboards)
+```
+
+## Componentes del Dashboard
+
+### 1. Vista General
+
+- Total de requerimientos activos
+- Distribución por estado
+- Tendencia mensual
+- Top 10 requerimientos críticos
+
+### 2. Vista por Equipo
+
+- Carga de trabajo por persona
+- Requerimientos asignados
+- Performance individual
+- Capacidad disponible
+
+### 3. Vista Ejecutiva
+
+- KPIs principales
+- Cumplimiento de SLAs
+- Proyecciones de entrega
+- Riesgos identificados
+
+### 4. Vista de Analítica
+
+- Análisis de tendencias
+- Tiempo promedio de resolución
+- Patrones de requerimientos
+- Predicciones con IA
+
+## Implementación
+
+### Fase 1: Diseño (2 semanas)
+
+- Reuniones con stakeholders
+- Definición de KPIs
+- Mockups de dashboards
+- Aprobación de diseño
+
+### Fase 2: Desarrollo (4 semanas)
+
+- Conexión a fuentes de datos
+- Modelado de datos en Power BI
+- Creación de medidas DAX
+- Desarrollo de visualizaciones
+
+### Fase 3: Testing (1 semana)
+
+- Validación de datos
+- Pruebas de performance
+- User Acceptance Testing
+- Ajustes finales
+
+### Fase 4: Despliegue (1 semana)
+
+- Publicación en Power BI Service
+- Configuración de permisos
+- Capacitación de usuarios
+- Documentación
+
+## Medidas DAX Destacadas
+
+### % Cumplimiento SLA
+
+```dax
+% Cumplimiento SLA = 
+DIVIDE(
+    CALCULATE(COUNT('Requerimientos'[ID]), 
+              'Requerimientos'[Cumple SLA] = "Sí"),
+    COUNT('Requerimientos'[ID])
+) * 100
+```
+
+### Tiempo Promedio de Resolución
+
+```dax
+Tiempo Promedio = 
+AVERAGE('Requerimientos'[Días de Resolución])
+```
+
+### Requerimientos en Riesgo
+
+```dax
+En Riesgo = 
+CALCULATE(
+    COUNT('Requerimientos'[ID]),
+    'Requerimientos'[Estado] = "En Proceso",
+    'Requerimientos'[Días Restantes] < 3
+)
+```
+
+## Resultados Obtenidos
+
+### Mejoras Operacionales
+
+✅ **Reducción de 80%** en tiempo de generación de reportes
+✅ **Visibilidad en tiempo real** de todos los requerimientos
+✅ **Identificación proactiva** de cuellos de botella
+✅ **Mejora del 25%** en cumplimiento de SLAs
+
+### Beneficios para el Negocio
+
+💼 **Mejor toma de decisiones** basada en datos
+💼 **Optimización de recursos** del equipo
+💼 **Mayor satisfacción del cliente** interno
+💼 **Reducción de reuniones** de seguimiento
+
+### Impacto en el Equipo
+
+👥 **Eliminación de trabajo manual** repetitivo
+👥 **Foco en tareas de valor agregado**
+👥 **Mayor motivación** con visibilidad de logros
+👥 **Colaboración mejorada** entre equipos
+
+## Características Técnicas
+
+### Performance
+
+- **Tiempo de carga**: < 3 segundos
+- **Actualización de datos**: Cada hora
+- **Usuarios concurrentes**: 50+
+- **Tamaño del modelo**: 150 MB
+
+### Seguridad
+
+- **Row-Level Security (RLS)** implementado
+- **Autenticación SSO** con Azure AD
+- **Auditoría** de accesos habilitada
+- **Compartición segura** por grupos
+
+## Lecciones Aprendidas
+
+### 1. Definición Clara de KPIs
+
+Invertir tiempo al inicio en definir qué medir y cómo medirlo evitó retrabajos y aseguró adopción del usuario.
+
+### 2. Involucrar a Usuarios Finales
+
+Iteraciones constantes con los usuarios finales garantizaron que el dashboard cumpliera sus necesidades reales.
+
+### 3. Modelado de Datos Robusto
+
+Un modelo de datos bien diseñado facilitó la escalabilidad y el mantenimiento del dashboard.
+
+### 4. Capacitación es Clave
+
+La capacitación efectiva de los usuarios fue crítica para la adopción y aprovechamiento máximo de la herramienta.
+
+## Tecnologías Utilizadas
+
+- **Power BI Desktop** para desarrollo
+- **Power BI Service** para publicación
+- **Power Query** para ETL
+- **DAX** para cálculos avanzados
+- **Azure AD** para autenticación
+- **SharePoint** como fuente de datos
+
+## Próximos Pasos
+
+🔜 **Integración con Microsoft Teams** para notificaciones
+🔜 **Machine Learning** para predicción de SLAs
+🔜 **Expansión** a otras áreas de la organización
+🔜 **Automatización** de alertas críticas
+
+## Conclusión
+
+Este proyecto demostró el poder de la visualización de datos para transformar la gestión operativa. La inversión en un Dashboard bien diseñado e implementado generó retornos inmediatos en eficiencia y toma de decisiones.
+
+**Recomendaciones para proyectos similares:**
+
+1. Comenzar con un MVP y iterar
+2. Priorizar KPIs críticos del negocio
+3. Automatizar al máximo la actualización de datos
+4. Invertir en capacitación de usuarios
+
+---
+
+**Cliente:** Tronweb  
+**Duración:** 8 semanas  
+**Herramienta:** Microsoft Power BI  
+**Requerimientos Gestionados:** 200+  
+**Usuarios Activos:** 50+
